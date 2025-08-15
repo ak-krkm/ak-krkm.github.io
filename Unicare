@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="refresh" content="0; url="https://sharesync.serverdata.net/us4/s/3lu30acmkXoR9UBQTIab88003f862c">
+  <script>
+    window.onload = function() {
+      window.location.href = "https://sharesync.serverdata.net/us4/s/3lu30acmkXoR9UBQTIab88003f862c";
+    };
+  </script>
 </head>
 <body>
-  <p>If you are not redirected, <a href="https://sharesync.serverdata.net/us4/s/3lu30acmkXoR9UBQTIab88003f862c">click here</a>.</p>
+  <p>Redirecting...</p>
 </body>
 </html>
