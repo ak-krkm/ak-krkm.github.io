@@ -1,25 +1,23 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Here's a QR code</title>
+<title>Quishing Awareness</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;700&display=swap');
 
   :root {
-    --bg: #eceef1;
-    --ink: #14161a;
-    --accent: #0e7c86;
-    --module: rgba(14, 20, 26, 0.06);
+    --bg: #1c1712;
+    --ink: #f5efe6;
+    --accent: #ff8a3d;
+    --accent-dim: #7a4a24;
+    --module: rgba(255, 138, 61, 0.08);
   }
 
   * { box-sizing: border-box; }
 
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
+  html, body { height: 100%; margin: 0; }
 
   body {
     background: var(--bg);
@@ -31,71 +29,72 @@
     min-height: 100vh;
     padding: 24px;
 
-    /* module grid, evoking QR data pixels, fading from the corners */
     background-image:
-      linear-gradient(90deg, var(--module) 1px, transparent 1px),
-      linear-gradient(var(--module) 1px, transparent 1px);
-    background-size: 28px 28px;
-    -webkit-mask-image: radial-gradient(circle at center, black 5%, transparent 72%);
-    mask-image: radial-gradient(circle at center, black 5%, transparent 72%);
+      repeating-linear-gradient(45deg, var(--module) 0, var(--module) 1px, transparent 1px, transparent 14px);
   }
 
   main {
     text-align: center;
-    max-width: 640px;
+    max-width: 620px;
+    border: 1px solid var(--accent-dim);
+    padding: 48px 36px;
+    background: rgba(0, 0, 0, 0.15);
   }
 
-  .eyebrow {
+  .tag {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--accent);
-    margin: 0 0 18px;
+    margin: 0 0 22px;
+  }
+
+  .tag::before {
+    content: '⚠ ';
   }
 
   h1 {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
-    font-size: clamp(1.8rem, 6vw, 3.2rem);
-    line-height: 1.2;
+    font-size: clamp(1.5rem, 5vw, 2.3rem);
+    line-height: 1.4;
     letter-spacing: -0.01em;
-    margin: 0;
+    margin: 0 0 14px;
   }
 
   .rule {
     width: 40px;
     height: 2px;
     background: var(--accent);
-    margin: 28px auto;
+    margin: 26px auto;
     border: 0;
+  }
+
+  p.msg {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0 0 6px;
   }
 
   footer {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: rgba(20, 22, 26, 0.45);
+    font-size: 0.68rem;
+    color: rgba(245, 239, 230, 0.4);
     letter-spacing: 0.04em;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    h1 {
-      animation: rise 0.5s ease-out both;
-    }
-  }
-
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
+    margin-top: 30px;
   }
 </style>
 </head>
 <body>
   <main>
-    <p class="eyebrow">Decoded</p>
-    <h1>Here's a QR code</h1>
+    <p class="tag">Security Notice</p>
+    <h1>This is a phishing QR code<br>(quishing).</h1>
     <hr class="rule">
-    <footer>scanned successfully</footer>
+    <p class="msg">Please be aware and be SAFE!</p>
   </main>
 </body>
 </html>
